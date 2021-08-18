@@ -49,7 +49,7 @@ function App() {
     try {
       var form_data = new FormData ();
       form_data.append ("id", counter);
-      form_data.append ("fileName", fileGuid);
+      form_data.append ("filename", fileGuid);
       form_data.append ("chunk", chunk);
 
       const response = await axios ({
@@ -83,7 +83,7 @@ function App() {
 
   const uploadCompleted = async () => {
     var form_data = new FormData();
-    form_data.append('fileName', fileGuid);
+    form_data.append('filename', fileGuid);
 
     const response = await axios ({
       method: "post",
@@ -110,7 +110,7 @@ function App() {
     <Jumbotron>
       <Form>
         <Form.Group>
-          <Form.File id="exampleFormControlFile1" onChange={getFileContext} label="Example file input" />
+          <Form.File id="upload_video" onChange={getFileContext} label="Example file input" />
         </Form.Group>
         <Form.Group style={{ display: showProgress ? "block" : "none" }}>
           {progressInstance}
