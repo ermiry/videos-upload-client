@@ -1,0 +1,7 @@
+FROM node:alpine
+
+ENV REACT_APP_RUNTIME=Development
+
+WORKDIR '/home/videos'
+COPY ./package.json ./
+CMD ["npm", "run", "start"]
